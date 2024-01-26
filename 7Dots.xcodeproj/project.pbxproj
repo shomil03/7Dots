@@ -13,6 +13,9 @@
 		4F8B42162B63BA0F00595714 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8B42152B63BA0F00595714 /* Preview Assets.xcassets */; };
 		4F8B421D2B63BD0E00595714 /* formattedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B421C2B63BD0E00595714 /* formattedTime.swift */; };
 		4F8B421F2B63BFD800595714 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B421E2B63BFD800595714 /* TimeView.swift */; };
+		4F8B42212B63D38000595714 /* CircularProgressiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B42202B63D38000595714 /* CircularProgressiveView.swift */; };
+		4F8B42232B63D40900595714 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B42222B63D40900595714 /* ButtonStyle.swift */; };
+		4F8B42252B63D5B900595714 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B42242B63D5B900595714 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		4F8B42152B63BA0F00595714 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F8B421C2B63BD0E00595714 /* formattedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formattedTime.swift; sourceTree = "<group>"; };
 		4F8B421E2B63BFD800595714 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		4F8B42202B63D38000595714 /* CircularProgressiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressiveView.swift; sourceTree = "<group>"; };
+		4F8B42222B63D40900595714 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		4F8B42242B63D5B900595714 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 			children = (
 				4F8B420E2B63BA0D00595714 /* _DotsApp.swift */,
 				4F8B42102B63BA0D00595714 /* ContentView.swift */,
+				4F8B42242B63D5B900595714 /* ButtonView.swift */,
+				4F8B42222B63D40900595714 /* ButtonStyle.swift */,
+				4F8B42202B63D38000595714 /* CircularProgressiveView.swift */,
 				4F8B421E2B63BFD800595714 /* TimeView.swift */,
 				4F8B421C2B63BD0E00595714 /* formattedTime.swift */,
 				4F8B42122B63BA0F00595714 /* Assets.xcassets */,
@@ -146,7 +155,10 @@
 				4F8B421D2B63BD0E00595714 /* formattedTime.swift in Sources */,
 				4F8B42112B63BA0D00595714 /* ContentView.swift in Sources */,
 				4F8B420F2B63BA0D00595714 /* _DotsApp.swift in Sources */,
+				4F8B42232B63D40900595714 /* ButtonStyle.swift in Sources */,
+				4F8B42212B63D38000595714 /* CircularProgressiveView.swift in Sources */,
 				4F8B421F2B63BFD800595714 /* TimeView.swift in Sources */,
+				4F8B42252B63D5B900595714 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

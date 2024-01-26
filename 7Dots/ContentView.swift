@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var countdown = 60
+    @State private var countdown = 0
+    @State private var initialTime = 0
     @State private var isTimerRunning : Bool = false
-   
+    
     
     
     var body: some View {
         NavigationStack{
-            TimeView(countDown: $countdown, isTimerRunning: $isTimerRunning)
-            
+            VStack{
+                ZStack{
+                    CircularProgressiveView(countdown: countdown,
+                                            initialTime: initialTime)
+                    
+                    TimeView(countDown: $countdown, isTimerRunning: $isTimerRunning, initialTime: $initialTime)
+                }
+                ButtonView(countdown: $countdown,
+                           isTimerRunning: $isTimerRunning,
+                           initialTime: $initialTime)
                 
-            
-            
+            }
         }
     }
 }

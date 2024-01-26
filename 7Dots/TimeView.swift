@@ -11,6 +11,7 @@ struct TimeView: View {
     
     @Binding var countDown : Int
     @Binding var isTimerRunning : Bool
+    @Binding var initialTime : Int
     @StateObject var model = formatterTimer()
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -24,6 +25,9 @@ struct TimeView: View {
                         countDown = countDown - 1
                     }else{
                         isTimerRunning.toggle()
+                        countDown = 0
+                        initialTime = 0
+                        
                     }
                 }
                 
@@ -32,5 +36,5 @@ struct TimeView: View {
 }
 
 #Preview {
-    TimeView(countDown: .constant(5), isTimerRunning: .constant(true))
+    TimeView(countDown: .constant(5), isTimerRunning: .constant(true), initialTime: .constant(5))
 }
