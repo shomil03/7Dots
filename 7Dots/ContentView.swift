@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var countdown = 60
+    @State private var isTimerRunning : Bool = false
+   
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            TimeView(countDown: $countdown, isTimerRunning: $isTimerRunning)
+            
+                
+            
+            
         }
-        .padding()
     }
 }
 
