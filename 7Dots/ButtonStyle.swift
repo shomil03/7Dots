@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ButtonStyle: View {
+    
     var title : String
     var image : String
+    
     var body: some View {
+        
         Label(title, systemImage: image)
             .frame(width: 135 , height: 50)
             .background(Color.white)

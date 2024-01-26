@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ButtonView: View {
+    
     @Binding var countdown : Int
     @Binding var isTimerRunning : Bool
     @Binding var initialTime : Int
+    
     var body: some View {
+        
         HStack {
+            
             Button(action: {
                 countdown += 10
                 isTimerRunning = true
@@ -23,6 +27,7 @@ struct ButtonView: View {
             })
             
             Spacer()
+            
             Button(action: {
                 isTimerRunning = false
                 initialTime = 0

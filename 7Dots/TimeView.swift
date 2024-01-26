@@ -17,6 +17,7 @@ struct TimeView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
+        
         Text(model.formatTimer(countDown: countDown))
             .font(.system(size: 50 , weight: .heavy))
             .onReceive(timer){ timer in

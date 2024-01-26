@@ -12,23 +12,28 @@ struct ContentView: View {
     @State private var initialTime = 0
     @State private var isTimerRunning : Bool = false
     
-    
-    
     var body: some View {
+        
         NavigationStack{
+            
             VStack{
+                
                 ZStack{
+                    
                     CircularProgressiveView(countdown: countdown,
                                             initialTime: initialTime)
                     
-                    TimeView(countDown: $countdown, isTimerRunning: $isTimerRunning, initialTime: $initialTime)
+                    TimeView(countDown: $countdown,
+                             isTimerRunning: $isTimerRunning,
+                             initialTime: $initialTime)
                 }
+                
                 ButtonView(countdown: $countdown,
                            isTimerRunning: $isTimerRunning,
                            initialTime: $initialTime)
                 
             }
-        }
+        }.preferredColorScheme(.light)
     }
 }
 
