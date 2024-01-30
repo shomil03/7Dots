@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CircularProgressiveView: View {
-    
-    var countdown : Int
-    var initialTime : Int
+
+    @ObservedObject var viewmodel : ViewModel
     
     var body: some View {
         ZStack{
@@ -23,7 +22,7 @@ struct CircularProgressiveView: View {
             
             Circle()
                 .trim(from: 0 ,
-                      to:  CGFloat((Double(countdown) / Double(initialTime) )))
+                      to:  CGFloat((Double(viewmodel.countdowntime) / Double(viewmodel.initialtime) )))
                 .stroke(style: StrokeStyle(lineWidth: 30, lineCap: .round, lineJoin: .round))
                 .frame(maxWidth: 300 , minHeight: 200)
                 .rotationEffect(.degrees(-90))
@@ -35,5 +34,5 @@ struct CircularProgressiveView: View {
 }
 
 #Preview {
-    CircularProgressiveView(countdown: 5, initialTime: 5)
+    CircularProgressiveView(viewmodel: ViewModel(countdowntime: 5, initialtime: 5, isTimerRunning: true))
 }

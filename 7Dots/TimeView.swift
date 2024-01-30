@@ -9,25 +9,21 @@ import SwiftUI
 
 struct TimeView: View {
     
-    @Binding var countDown : Int
-    @Binding var isTimerRunning : Bool
-    @Binding var initialTime : Int
     @StateObject var model = formatterTimer()
+    @ObservedObject var viewmodel : ViewModel
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
-        Text(model.formatTimer(countDown: countDown))
+        Text(model.formatTimer(countDown: viewmodel.countdowntime))
             .font(.system(size: 50 , weight: .heavy))
             .onReceive(timer){ timer in
                 withAnimation(.easeIn){
-                    if(countDown > 0 && isTimerRunning){
-                        countDown = countDown - 1
+                    if(viewmodel.countdowntime > 0 && viewmodel.isTimerRunning){
+                        viewmodel.decreaseTime()
                     }else{
-                        isTimerRunning.toggle()
-                        countDown = 0
-                        initialTime = 0
+                        viewmodel.resetTimer()
                         
                     }
                 }
@@ -37,5 +33,5 @@ struct TimeView: View {
 }
 
 #Preview {
-    TimeView(countDown: .constant(5), isTimerRunning: .constant(true), initialTime: .constant(5))
+    TimeView(viewmodel: ViewModel(countdowntime: 5, initialtime: 5, isTimerRunning: true))
 }

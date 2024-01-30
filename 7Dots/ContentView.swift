@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var countdown = 0
     @State private var initialTime = 0
     @State private var isTimerRunning : Bool = false
+    @StateObject private var viewmodel = ViewModel(countdowntime: 0, initialtime: 0, isTimerRunning: false)
     
     var body: some View {
         
@@ -20,17 +21,12 @@ struct ContentView: View {
                 
                 ZStack{
                     
-                    CircularProgressiveView(countdown: countdown,
-                                            initialTime: initialTime)
+                    CircularProgressiveView(viewmodel: viewmodel)
                     
-                    TimeView(countDown: $countdown,
-                             isTimerRunning: $isTimerRunning,
-                             initialTime: $initialTime)
+                    TimeView(viewmodel: viewmodel)
                 }
                 
-                ButtonView(countdown: $countdown,
-                           isTimerRunning: $isTimerRunning,
-                           initialTime: $initialTime)
+                ButtonView(viewmodel: viewmodel)
                 
             }
         }.preferredColorScheme(.light)
